@@ -4,9 +4,9 @@ import socket
 import sys
 import urllib.request
 
-PRINTER_ADDRESS = "ip address"
+PRINTER_ADDRESS = ""
 PRINTER_PORT = 13376
-TOKEN = "token"
+TOKEN = ""
 
 client = discord.Client ()
 
@@ -20,7 +20,7 @@ def tl (msg):
 
 def qr (msg):
 	s = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
-	s.connect (("37.136.101.54", 13376))
+	s.connect ((PRINTER_ADDRESS, PRINTER_PORT))
 	b = bytearray ([0x1D, 0x28, 0x6B, 0x04, 0x00, 0x31, 0x41, 0x31, 0x00])
 	s.send (b)
 
